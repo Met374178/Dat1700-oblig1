@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:display="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Oblig1.js"></script>
+    <style>
+        .info {
+            display: inline-block;
+            width: 80px;
+            text-align: left;
+            padding: 10px;
+            padding-left: 0;
+        }
+
+        .error {
+            color: red;
+            display: none;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+<h1>Bestilling av kinobilleter</h1>
+
+
+<label for="film">Velg film:</label>
+<select id="film">
+    <option>Velg film her</option>
+    <option>Harry potter</option>
+    <option>Paddington</option>
+    <option>Parasite</option>
+</select> <label id="feilFilm" for="film" class="error">Må velge film</label>
+</br></br>
+
+
+
+<label for="antall">Antall</label>
+<input type="text" id="antall" size="1" />
+<label id="feilAntall" for="antall" class="error">Må skrive noe inn i antall</label>
+<br /><br />
+
+<label for="fornavn" class="info">Fornavn</label>
+<input type="text" id="fornavn" />
+<label id="feilFornavn" class="error">Må skrive noe inn i fornavnet</label>
+<br />
+
+<label for="etternavn" class="info">Etternavn</label>
+<input type="text" id="etternavn" />
+<label id="feilEtternavn" class="error">Må skrive noe inn etternavnet</label>
+<br />
+
+<label for="tlf" class="info">Telefonnr</label>
+<input type="text" id="tlf" />
+<label id="feiltlf" class="error">Må skrive noe inn i telefonnr</label>
+<br />
+
+<label for="email" class="info">Epost</label>
+<input type="text" id="email" />
+<label id="feilepost" class="error">Må skrive noe inn i epost</label>
+<br /><br />
+
+
+
+<button onclick="kjop()">Kjøp billett</button>
+
+<h2>Alle billetter</h2>
+<div id="visbillett"></div>
+<button onclick="slett()">Slett alle billettene </button>
+
+
+
+
+
+</body>
+
+</html>

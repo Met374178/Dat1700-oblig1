@@ -1,85 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:display="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="Oblig1.js"></script>
-    <style>
-        .info {
-            display: inline-block;
-            width: 80px;
-            text-align: left;
-            padding: 10px;
-            padding-left: 0;
-        }
-
-        .error {
-            color: red;
-            display: none;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: center;
-
-        }
-    </style>
+    <link rel="stylesheet" href="Oblig1.css">
 </head>
-
 <body>
-<h1>Bestilling av kinobilleter</h1>
-
-
-<label for="film">Velg film:</label>
-<select id="film">
-    <option>Velg film her</option>
-    <option>Harry potter</option>
-    <option>Paddington</option>
-    <option>Parasite</option>
-</select> <label id="feilFilm" for="film" class="error">Må velge film</label>
-</br></br>
-
-
-
-<label for="antall">Antall</label>
-<input type="text" id="antall" size="1" />
-<label id="feilAntall" for="antall" class="error">Må skrive noe inn i antall</label>
-<br /><br />
-
-<label for="fornavn" class="info">Fornavn</label>
-<input type="text" id="fornavn" />
-<label id="feilFornavn" class="error">Må skrive noe inn i fornavnet</label>
-<br />
-
-<label for="etternavn" class="info">Etternavn</label>
-<input type="text" id="etternavn" />
-<label id="feilEtternavn" class="error">Må skrive noe inn etternavnet</label>
-<br />
-
-<label for="tlf" class="info">Telefonnr</label>
-<input type="text" id="tlf" />
-<label id="feiltlf" class="error">Må skrive noe inn i telefonnr</label>
-<br />
-
-<label for="email" class="info">Epost</label>
-<input type="text" id="email" />
-<label id="feilepost" class="error">Må skrive noe inn i epost</label>
-<br /><br />
-
-
-
-<button onclick="kjop()">Kjøp billett</button>
-
-<h2>Alle billetter</h2>
-<div id="visbillett"></div>
-<button onclick="slett()">Slett alle billettene </button>
-
-
-
-
-
+<div id="stylle">
+    <h2>Bestilling av Kinobilleter</h2>
+    <form onsubmit="kinoBilleter; return false;" method="post">
+        <label for="filmer">Velg film</label>
+        <select id="filmer" style="width: 150px;" required>
+            <option value="lord of the rings">Willy Wonka</option>
+            <option value="en film">Hunger games</option>
+            <option value="frihetens regn">Inside Job</option>
+            <option value="snøhvit">Star wars</option>
+        </select></td>
+    </tr>
+    <br><br>
+    <tr>
+        <td>Antall</td>
+        <td><input type="number" size="10px" min="1" max="150" required id="antall"></td><td><span id="antall1" style="color: red"></span></td>
+    </tr>
+    <br><br>
+    <table>
+        <tr>
+            <td>Fornavn</td>
+            <td><input type="text" id="fornavn"></td><td><span id="fornavn1" style="color: red"></span></td>
+        </tr>
+        <tr>
+            <td>Etternavn</td>
+            <td><input type="text" id="etternavn"></td><td><span id="etternavn1" style="color: red"></span></td>
+        </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="tel" id="telefon" minlength="8" maxlength="8"></td><td><span id="telefon1" style="color: red"></span></td>
+        </tr>
+        <tr>
+            <td>Epost</td>
+            <td><input type="email" id="email"></td><td><span id="email1" style="color: red"></span></td>
+        </tr>
+        <br>
+    </table>
+    <br>
+    <button onclick="kjop()">Kjøp billett</button>
+    <br><br>
+    <h3>Vis antall biletter</h3>
+    <div id="resultat"></div>
+    <br><br>
+    <button onclick="slett()">Trykk for å slette alle billetter</button>
+</div>
 </body>
-
 </html>
